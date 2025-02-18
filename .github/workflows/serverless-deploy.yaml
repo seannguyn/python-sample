@@ -13,7 +13,7 @@ jobs:
   deploy:
     uses: seannguyn/actions/.github/workflows/serverless.yaml@main
     with:
-      image_name: wavingboat121/${{ github.event.repository.name }}
+      docker_repo: ${{ env.DOCKER_REPO }}
     secrets:
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
