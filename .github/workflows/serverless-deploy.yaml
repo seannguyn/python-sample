@@ -1,0 +1,16 @@
+name: Deploy Using Shared Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    uses: seannguyn/actions/.github/workflows/serverless.yml@main
+    with:
+      image_name: wavingboat121/${{ github.event.repository.name }}
+    secrets:
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      GH_PAT: ${{ secrets.GH_PAT }}
