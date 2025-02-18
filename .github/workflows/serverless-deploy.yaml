@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    uses: seannguyn/actions/.github/workflows/serverless.yml@main
+    uses: seannguyn/actions/.github/workflows/serverless.yaml@main
     with:
       image_name: wavingboat121/${{ github.event.repository.name }}
     secrets:
